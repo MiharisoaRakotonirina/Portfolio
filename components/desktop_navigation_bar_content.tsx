@@ -40,6 +40,10 @@ export default function DesktopNavigationBarContent() {
       label: "Projects",
     },
     {
+      id: "experience",
+      label: "Experience",
+    },
+    {
       id: "#",
       label: "Contact",
       subMenu: [
