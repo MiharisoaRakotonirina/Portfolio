@@ -76,6 +76,23 @@ export default function DesktopNavigationBarContent() {
     },
   ];
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const sections = NavItems.map((item) => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(NavItems[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
   return (
     <nav className="space-x-4 flex flex-row">
       {NavItems.map((NavItem: NavItemProps) => {
