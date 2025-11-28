@@ -94,7 +94,7 @@ export default function DesktopNavigationBarContent() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
   return (
-    <nav className="space-x-4 flex flex-row">
+    <nav className="space-x-4 flex flex-row max-md:hidden">
       {NavItems.map((NavItem: NavItemProps) => {
         if (!NavItem.subMenu) {
           return (
