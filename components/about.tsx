@@ -46,7 +46,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className=" flex items-center justify-center bg-muted/30"
+      className=" flex items-center justify-center bg-muted/30 min-h-screen"
     >
       <div className="max-w-4xl  px-4 py-16">
         <div className="text-center mb-8">
@@ -64,7 +64,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Card className="max-w-xl">
+              <Card className="">
                 <CardHeader>
                   <CardTitle>My Background</CardTitle>
                 </CardHeader>
@@ -89,7 +89,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
             >
-              <Card className="max-w-xl">
+              <Card>
                 <CardHeader>
                   <CardTitle>Activities & Interests</CardTitle>
                 </CardHeader>
@@ -118,7 +118,7 @@ export default function About() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
             <div>
-              <Card className="max-w-xl ">
+              <Card>
                 <CardHeader className="flex items-center justify-center rounded-full">
                   <Image
                     src={profilePic}
