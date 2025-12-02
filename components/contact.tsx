@@ -53,7 +53,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-muted/30 py-16">
-      <div className="max-w-4xl px-4 mx-auto flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="max-w-4xl px-4 mx-auto  overflow-hidden">
         <div className="text-center mb-8">
           <h2 className="text-3xl mb-4">Let&apos;s connect</h2>
           <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
@@ -62,7 +62,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 bg-red-400 p-4">
           <Card>
             <CardHeader>
               <CardTitle>Send Me a Note</CardTitle>
