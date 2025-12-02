@@ -62,73 +62,65 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-md:mx-10">
-          <div>
+        <div className="grid lg:grid-cols-2 gap-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>Send Me a Note</CardTitle>
+              <CardDescription>
+                Complete the form below and I will reply shortly.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ContactForm />
+            </CardContent>
+          </Card>
+          <div className="space-y-8">
             <Card>
               <CardHeader>
-                <CardTitle>Send Me a Note</CardTitle>
+                <CardTitle>Contact Details</CardTitle>
                 <CardDescription>
-                  Complete the form below and I will reply shortly.
+                  Don't hesitate to contact me via any of these methods
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ContactForm />
+                <div className="space-y-4">
+                  {contactDetails.map((contactDetail: ContactDetailsProps) => {
+                    return (
+                      <ContactDetails
+                        icon={contactDetail.icon}
+                        label={contactDetail.label}
+                        value={contactDetail.value}
+                        key={contactDetail.label}
+                      />
+                    );
+                  })}
+                </div>
               </CardContent>
             </Card>
-          </div>
-          <div className="lg:space-y-2 space-y-8">
-            <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Details</CardTitle>
-                  <CardDescription>
-                    Don't hesitate to contact me via any of these methods
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {contactDetails.map(
-                      (contactDetail: ContactDetailsProps) => {
-                        return (
-                          <ContactDetails
-                            icon={contactDetail.icon}
-                            label={contactDetail.label}
-                            value={contactDetail.value}
-                            key={contactDetail.label}
-                          />
-                        );
-                      }
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-            <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Follow me</CardTitle>
-                  <CardDescription>
-                    Connect with me on social network and check my latest work
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-x-4">
-                    {socialLinks.map((socialLink: socialLinksProps) => {
-                      return (
-                        <HeroSocialNetworkComponent
-                          link={socialLink.link}
-                          key={socialLink.title}
-                          icon={socialLink.icon}
-                        />
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-            <div>
-              <ContactResume />
-            </div>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Follow me</CardTitle>
+                <CardDescription>
+                  Connect with me on social network and check my latest work
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-x-4">
+                  {socialLinks.map((socialLink: socialLinksProps) => {
+                    return (
+                      <HeroSocialNetworkComponent
+                        link={socialLink.link}
+                        key={socialLink.title}
+                        icon={socialLink.icon}
+                      />
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <ContactResume />
           </div>
         </div>
       </div>
