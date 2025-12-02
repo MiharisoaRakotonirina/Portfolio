@@ -62,7 +62,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 max-md:mx-5">
           <div>
             <Card>
               <CardHeader>
