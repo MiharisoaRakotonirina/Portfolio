@@ -3,6 +3,8 @@ import HeroSection from "@/components/hero_section";
 import NavigationBar from "@/components/navigation_bar";
 import Project from "@/components/projects";
 import Skills from "@/components/skills";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <About />
       <Skills />
       <Project />
+      <Contact />
+      <Footer />
     </div>
   );
 }
