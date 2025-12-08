@@ -52,17 +52,16 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="bg-muted/30 py-16">
-      <div className="max-w-4xl px-4 mx-auto  overflow-hidden">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl mb-4">Let&apos;s connect</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
-            I&apos;m always eager to discuss new opportunities, dive into
-            interesting projects, or simply chat about technology.
+    <section id="contact" className="py-20 bg-muted/30 overflow-x-hidden">
+      <div className="max-w-4xl mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl mb-4">Let&apos;s connect</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Always eager to discuss opportunities and tech projects.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 bg-red-400 p-4">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12  min-w-0">
           <Card>
             <CardHeader>
               <CardTitle>Send Me a Note</CardTitle>
@@ -74,27 +73,26 @@ export default function Contact() {
               <ContactForm />
             </CardContent>
           </Card>
-          <div className="space-y-8">
+
+          <div className="space-y-8 min-w-0">
             <Card>
               <CardHeader>
                 <CardTitle>Contact Details</CardTitle>
                 <CardDescription>
-                  Don't hesitate to contact me via any of these methods
+                  Don&apos;t hesitate to contact me via any of these methods
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {contactDetails.map((contactDetail: ContactDetailsProps) => {
-                    return (
-                      <ContactDetails
-                        icon={contactDetail.icon}
-                        label={contactDetail.label}
-                        value={contactDetail.value}
-                        key={contactDetail.label}
-                      />
-                    );
-                  })}
-                </div>
+              <CardContent className="space-y-4">
+                {contactDetails.map((contactDetail: ContactDetailsProps) => {
+                  return (
+                    <ContactDetails
+                      icon={contactDetail.icon}
+                      label={contactDetail.label}
+                      value={contactDetail.value}
+                      key={contactDetail.label}
+                    />
+                  );
+                })}
               </CardContent>
             </Card>
 
@@ -106,7 +104,7 @@ export default function Contact() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-x-4">
+                <div className="flex space-x-4">
                   {socialLinks.map((socialLink: socialLinksProps) => {
                     return (
                       <HeroSocialNetworkComponent
