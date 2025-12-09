@@ -9,7 +9,7 @@ import { toast } from "sonner";
 export default function ContactForm() {
   const [informations, setInformations] = React.useState({
     fullName: "",
-    emailAdress: "",
+    emailAddress: "",
     subject: "",
     message: "",
   });
@@ -49,10 +49,11 @@ export default function ContactForm() {
         position: "bottom-right",
         duration: 1500,
         description: "Thanks for reaching out. I'll get back to you soon.",
+        closeButton: true,
       });
       setInformations({
         fullName: "",
-        emailAdress: "",
+        emailAddress: "",
         subject: "",
         message: "",
       });
@@ -76,7 +77,8 @@ export default function ContactForm() {
             placeholder={"Your name"}
             onChange={handleChange}
             required={true}
-            name="full_name"
+            name="fullName"
+            value={informations.fullName}
           />
         </div>
 
@@ -88,7 +90,8 @@ export default function ContactForm() {
             placeholder={"your.email@example.com"}
             onChange={handleChange}
             required={true}
-            name="email_address"
+            name="emailAddress"
+            value={informations.emailAddress}
           />
         </div>
       </div>
@@ -102,6 +105,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required={true}
           name="subject"
+          value={informations.subject}
         />
       </div>
 
@@ -113,6 +117,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required={true}
           name="message"
+          value={informations.message}
         />
       </div>
 
