@@ -200,8 +200,12 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <Button className="w-full cursor-pointer" disabled={!isValid}>
-        Send Message
+      <Button
+        className="w-full cursor-pointer"
+        disabled={!isValid}
+        variant={"outline"}
+      >
+        <span className="text-white">Send Message</span>
       </Button>
     </form>
   );
