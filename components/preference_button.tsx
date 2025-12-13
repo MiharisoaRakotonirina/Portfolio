@@ -56,7 +56,7 @@ export default function PreferenceButton() {
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild className="cursor-pointer">
         <Button
-          className="fixed bottom-12 left-20 z-50 h-10 w-10 rounded-full flex items-center justify-center p-0! [&_svg]:size-5! cursor-pointer bg-primary/10 "
+          className="fixed bottom-12 right-4 z-50 h-10 w-10 rounded-full flex items-center justify-center p-0! [&_svg]:size-5! cursor-pointer bg-primary/10 "
           aria-label="Settings"
           variant={"outline"}
         >
