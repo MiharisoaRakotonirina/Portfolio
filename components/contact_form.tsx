@@ -6,8 +6,11 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
 import contactScheme from "@/lib/validation/contact_scheme";
+import { useTheme } from "next-themes";
 
 export default function ContactForm() {
+  const { theme } = useTheme();
+
   const [informations, setInformations] = React.useState({
     fullName: "",
     emailAddress: "",
@@ -205,7 +208,7 @@ export default function ContactForm() {
         disabled={!isValid}
         variant={"outline"}
       >
-        <span className="text-white">Send Message</span>
+        Send Message
       </Button>
     </form>
   );
