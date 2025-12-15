@@ -33,7 +33,7 @@ export default function ProjectCard({
   isFeatured,
 }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden max-w-md pt-0">
+    <Card className="overflow-hidden w-full pt-0">
       <Carousel className="w-full">
         <CarouselContent>
           {images.map((image, index) => (
@@ -50,8 +50,8 @@ export default function ProjectCard({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2" />
-        <CarouselNext className="right-2" />
+        <CarouselPrevious className="left-2 cursor-pointer" />
+        <CarouselNext className="right-2 cursor-pointer" />
       </Carousel>
 
       <CardHeader>
@@ -86,6 +86,7 @@ export default function ProjectCard({
             </Badge>
           ))}
         </div>
+        {technologies.length < 5 && <div className="h-[30px]"></div>}
       </CardContent>
     </Card>
   );
