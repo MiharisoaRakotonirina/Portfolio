@@ -29,7 +29,7 @@ export default function Project() {
 
   return (
     <section className="bg-muted/30 mb-16 p-4" id="projects">
-      <div className="max-w-4xl px-4 mx-auto flex flex-col items-center justify-center min-h-screen">
+      <div className="max-w-4xl mx-auto flex flex-col items-center justify-center min-h-screen w-full">
         <div className="text-center mb-8">
           <h2 className="text-3xl mb-4">Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
@@ -38,7 +38,7 @@ export default function Project() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-2 gap-8 w-full ">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
