@@ -7,6 +7,7 @@ import HeroSocialNetworkComponent, {
 import { TextEffect } from "./motion-primitives/text-effect";
 import { Button } from "./ui/button";
 import { motion } from "motion/react";
+import Scroll from "@/lib/scrollTo";
 
 export default function HeroSection() {
   const socialNetworks: HeroSocialNetworkProps[] = [
@@ -108,7 +109,11 @@ export default function HeroSection() {
               },
             }}
           >
-            <Button size={"lg"} className="cursor-pointer">
+            <Button
+              size={"lg"}
+              className="cursor-pointer"
+              onClick={() => Scroll("contact")}
+            >
               Get In Touch
             </Button>
           </motion.div>
@@ -122,7 +127,12 @@ export default function HeroSection() {
               },
             }}
           >
-            <Button variant={"outline"} size={"lg"} className="cursor-pointer">
+            <Button
+              variant={"outline"}
+              size={"lg"}
+              className="cursor-pointer"
+              onClick={() => Scroll("about")}
+            >
               Learn More
             </Button>
           </motion.div>
