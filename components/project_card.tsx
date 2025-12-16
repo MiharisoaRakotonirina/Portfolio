@@ -86,7 +86,6 @@ export default function ProjectCard({
             </Badge>
           ))}
         </div>
-        {technologies.length < 5 && <div className="h-[30px]"></div>}
       </CardContent>
     </Card>
   );
