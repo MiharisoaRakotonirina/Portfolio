@@ -6,6 +6,7 @@ import Skills from "@/components/skills";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import PreferenceButton from "@/components/preference_button";
+import Experience from "@/components/experience";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Skills />
       <Project />
+      <Experience />
       <Contact />
       <Footer />
     </div>
