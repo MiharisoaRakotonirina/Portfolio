@@ -1,16 +1,15 @@
 import React from "react";
 import { Linkedin, Mail, MessageCircleMore } from "lucide-react";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { Button } from "./ui/button";
 import Scroll from "@/lib/scrollTo";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 type NavItemProps = {
   id: string;
@@ -50,31 +49,31 @@ export default function DesktopNavigationBarContent() {
         {
           id: "linkedin",
           label: "LinkedIn",
-          icon: <Linkedin className="text-base" />,
+          icon: <Linkedin className="w-5! h-5! text-orange-400" />,
           link: "https://www.linkedin.com/in/miharisoa-rakotonirina",
         },
         {
           id: "email",
           label: "Email",
           link: "mailto:miharisoa.rakotonirina.06@gmail.com",
-          icon: <Mail className="text-base" />,
+          icon: <Mail className="w-6! h-6! text-orange-400" />,
         },
         {
           id: "whatsapp",
           label: "WhatsApp",
-          icon: <FaWhatsapp className="text-2xl" />,
+          icon: <FaWhatsapp className="w-6! h-6! text-orange-400" />,
           link: "https://wa.me/261320250500",
         },
         {
           id: "telegram",
           label: "Telegram",
-          icon: <FaTelegramPlane className="text-2xl" />,
+          icon: <FaTelegramPlane className="w-6! h-6! text-orange-400" />,
           link: "https://t.me/MIHARISOA_RAKOTONIRINA",
         },
         {
           id: "contact",
           label: "Send me a message",
-          icon: <MessageCircleMore className="text-base" />,
+          icon: <MessageCircleMore className="w-6! h-6! text-orange-400" />,
         },
       ],
     },
@@ -118,49 +117,52 @@ export default function DesktopNavigationBarContent() {
         }
 
         return (
-          <NavigationMenu key={NavItem.id}>
-            <NavigationMenuList className="cursor-pointer!">
-              <NavigationMenuItem key={NavItem.id}>
-                <NavigationMenuTrigger className="bg-transparent!">
-                  {NavItem.label}
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="space-x-8 w-[300px] space-y-4">
-                    {NavItem.subMenu.map((subMenu: NavItemProps) => {
-                      return (
-                        <li
-                          key={subMenu.id}
-                          className="cursor-pointer flex flex-row items-center hover:bg-accent w-full! p-1"
+          <DropdownMenu key={NavItem.id} modal={false}>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                className="cursor-pointer hover:bg-transparent!"
+              >
+                {NavItem.label}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[300px]">
+              {NavItem.subMenu.map((subMenu: NavItemProps) => {
+                return (
+                  <DropdownMenuItem
+                    key={subMenu.id}
+                    className="cursor-pointer py-4"
+                  >
+                    <div className="flex items-center w-full">
+                      <Link
+                        href={subMenu.link ? subMenu.link : subMenu.id}
+                        className="border p-2 rounded-full  bg-accent text-orange-400!"
+                        target="_blank"
+                      >
+                        <span>{subMenu.icon}</span>
+                      </Link>
+                      {subMenu.link ? (
+                        <Link
+                          href={subMenu.link}
+                          target="_blank"
+                          className="ml-5 text-base w-full"
                         >
-                          <span className="border p-2 rounded-full bg-accent text-orange-400">
-                            {subMenu.icon}
-                          </span>
-                          {subMenu.link ? (
-                            <Link
-                              href={subMenu.link}
-                              target="_blank"
-                              key={subMenu.id}
-                            >
-                              <span className="ml-5 text-sm">
-                                {subMenu.label}
-                              </span>
-                            </Link>
-                          ) : (
-                            <span
-                              className="ml-5 text-sm"
-                              onClick={() => Scroll(subMenu.id)}
-                            >
-                              {subMenu.label}
-                            </span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+                          {subMenu.label}
+                        </Link>
+                      ) : (
+                        <span
+                          className="ml-5 text-base"
+                          onClick={() => Scroll(subMenu.id)}
+                        >
+                          {subMenu.label}
+                        </span>
+                      )}
+                    </div>
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
         );
       })}
     </nav>
