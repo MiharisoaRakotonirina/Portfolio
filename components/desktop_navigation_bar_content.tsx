@@ -134,13 +134,22 @@ export default function DesktopNavigationBarContent() {
                     className="cursor-pointer py-4"
                   >
                     <div className="flex items-center w-full">
-                      <Link
-                        href={subMenu.link ? subMenu.link : subMenu.id}
-                        className="border p-2 rounded-full  bg-accent text-orange-400!"
-                        target="_blank"
-                      >
-                        <span>{subMenu.icon}</span>
-                      </Link>
+                      {subMenu.link ? (
+                        <Link
+                          href={subMenu.link}
+                          className="border p-2 rounded-full bg-accent text-orange-400!"
+                          target="_blank"
+                        >
+                          <span>{subMenu.icon}</span>
+                        </Link>
+                      ) : (
+                        <span
+                          className="border p-2 rounded-full bg-accent text-orange-400!"
+                          onClick={() => Scroll(subMenu.id)}
+                        >
+                          {subMenu.icon}
+                        </span>
+                      )}
                       {subMenu.link ? (
                         <Link
                           href={subMenu.link}
