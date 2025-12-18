@@ -31,6 +31,7 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
+    "@next/codemod": "16.1.0-canary.32",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
