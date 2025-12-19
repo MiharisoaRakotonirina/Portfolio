@@ -1,3 +1,5 @@
+"use client";
+import { useCurrentLocale, useI18n } from "@/locales/client";
 import {
   Card,
   CardContent,
@@ -9,6 +11,8 @@ import { Calendar, Clock, LocateIcon, School } from "lucide-react";
 import { FaUserTie } from "react-icons/fa";
 
 export default function Experience() {
+  const t = useI18n();
+  const locale = useCurrentLocale();
   return (
     <section
       id="experience"
@@ -16,10 +20,9 @@ export default function Experience() {
     >
       <div className="max-w-4xl px-4 mx-auto flex flex-col items-center justify-center min-h-screen w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl mb-4">Education & Professional Path</h2>
+          <h2 className="text-3xl mb-4">{t("experience.title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
-            A summary of my academic path and professional experience in the
-            tech sector.
+            {t("experience.description")}
           </p>
         </div>
 
@@ -27,18 +30,18 @@ export default function Experience() {
           <div>
             <span className="flex items-center gap-4 mb-4">
               <School className="text-orange-400" size={32} />
-              <h2 className="text-lg">Academic background</h2>
+              <h2 className="text-lg">{t("experience.academicPath.title")}</h2>
             </span>
             <Card>
               <CardHeader>
-                <CardTitle>Bachelor's Degree in Computer Science</CardTitle>
+                <CardTitle>{t("experience.academicPath.cardTitle")}</CardTitle>
                 <CardDescription>
                   Haute Ecole d'Informatique ( HEI )
                 </CardDescription>
                 <div className="flex flex-row items-center gap-8 mt-4 max-sm:flex-col max-sm:items-start">
                   <CardDescription className="flex flex-row items-center gap-3">
                     <Calendar />
-                    2023 - 2026 (expected)
+                    2023 - 2026 {locale === "en" ? "(expected)" : "(attendu)"}
                   </CardDescription>
                   <CardDescription className="flex flex-row items-center gap-3">
                     <LocateIcon />
@@ -48,10 +51,12 @@ export default function Experience() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  <span className="font-bold!">Relevant coursework:</span>{" "}
-                  Object-Oriented Programming, Algorithms and Data Structures,
-                  Database Systems, Web and Mobile Development, Cloud Computing,
-                  Software Engineering, Cybersecurity, Data Analysis.
+                  <span className="font-bold!">
+                    {locale === "en"
+                      ? "Relevant coursework:"
+                      : "Cours associés: "}
+                  </span>{" "}
+                  {t("experience.academicPath.courseSubject")}
                 </CardDescription>
                 <div className="h-4"></div>
               </CardContent>
@@ -60,31 +65,59 @@ export default function Experience() {
           <div>
             <span className="flex items-center gap-4 mb-4">
               <FaUserTie className="text-3xl text-orange-400" />
-              <h2 className="text-lg">Professional background</h2>
+              <h2 className="text-lg">
+                {t("experience.professionalPath.title")}
+              </h2>
             </span>
             <Card>
               <CardHeader>
-                <CardTitle>Student Seeking Internship</CardTitle>
+                <CardTitle>
+                  {t("experience.professionalPath.cardTitle")}
+                </CardTitle>
                 <CardDescription>
-                  Looking for my first professional opportunity
+                  {t("experience.professionalPath.cardSubtitle")}
                 </CardDescription>
                 <CardDescription className="flex flex-row items-center gap-3 mt-4">
                   <Clock />
-                  At the earliest possible time
+                  {t("experience.professionalPath.cardDescription")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
                   <li>
-                    Work-study position as a{" "}
-                    <strong>Front-end Developer</strong> (React JS, TypeScript)
+                    {t(
+                      "experience.professionalPath.cardContent.firstDescription"
+                    )}{" "}
+                    <strong>
+                      {t(
+                        "experience.professionalPath.cardContent.postDescription"
+                      )}
+                    </strong>{" "}
+                    (React JS, TypeScript)
                   </li>
                   <li>
-                    Schedule: <strong>22 hours per week</strong>
+                    {t(
+                      "experience.professionalPath.cardContent.secondDescription"
+                    )}{" "}
+                    <strong>
+                      {t("experience.professionalPath.cardContent.schedule")}
+                    </strong>
                   </li>
                   <li>
-                    Open to <strong>remote work</strong> and{" "}
-                    <strong>weekend availability</strong>
+                    {t(
+                      "experience.professionalPath.cardContent.lastDescription"
+                    )}{" "}
+                    <strong>
+                      {t(
+                        "experience.professionalPath.cardContent.firstCondition"
+                      )}
+                    </strong>{" "}
+                    {t("experience.professionalPath.cardContent.keyword")}{" "}
+                    <strong>
+                      {t(
+                        "experience.professionalPath.cardContent.lastCondition"
+                      )}
+                    </strong>
                   </li>
                 </ul>
               </CardContent>
