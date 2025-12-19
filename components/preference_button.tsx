@@ -13,9 +13,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Kbd, KbdGroup } from "./ui/kbd";
 import { useTheme } from "next-themes";
+import { useChangeLocale, useCurrentLocale } from "@/locales/client";
+import { useRouter } from "next/navigation";
 
 export default function PreferenceButton() {
   const { setTheme } = useTheme();
+  const router = useRouter();
 
   const handleKeyPress = (
     event:
@@ -41,6 +44,12 @@ export default function PreferenceButton() {
       if (event.key === "S" && event.shiftKey) {
         setTheme("system");
       }
+      if (event.key === "F" && event.shiftKey) {
+        changeLocale("fr");
+      }
+      if (event.key === "A" && event.shiftKey) {
+        changeLocale("en");
+      }
     }
   };
 
@@ -51,6 +60,13 @@ export default function PreferenceButton() {
       document.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
+
+  const locale = useCurrentLocale();
+  const changeLocale = useChangeLocale();
+
+  const changeLocalLang = () => {
+    changeLocale(locale === "en" ? "fr" : "en");
+  };
 
   return (
     <DropdownMenu modal={false}>
@@ -65,14 +81,22 @@ export default function PreferenceButton() {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="center" className="w-56 ml-20">
-        <DropdownMenuLabel>Personal preferences</DropdownMenuLabel>
+        <DropdownMenuLabel>
+          {locale === "en"
+            ? "Personal preferences"
+            : "Paramètres personnalisés"}
+        </DropdownMenuLabel>
         <DropdownMenuGroup>
           <DropdownMenuItem
             className="flex items-center justify-between cursor-pointer "
             onClick={() => setTheme("light")}
           >
-            <span className="flex items-center gap-3">
-              Light Mode
+            <span
+              className={`flex items-center ${
+                locale === "en" ? "gap-3" : "gap-[53px]"
+              }`}
+            >
+              {locale === "en" ? "Light mode" : "Clair"}
               <Sun />
             </span>
             <KbdGroup>
@@ -85,8 +109,12 @@ export default function PreferenceButton() {
             className="flex items-center justify-between cursor-pointer"
             onClick={() => setTheme("dark")}
           >
-            <span className="flex items-center gap-3.5  ">
-              Dark Mode
+            <span
+              className={`flex items-center ${
+                locale === "en" ? "gap-3.5" : "gap-8.5"
+              }`}
+            >
+              {locale === "en" ? "Dark mode" : "Sombre"}
               <Moon />
             </span>
             <KbdGroup>
@@ -99,8 +127,12 @@ export default function PreferenceButton() {
             className="flex items-center justify-between cursor-pointer"
             onClick={() => setTheme("system")}
           >
-            <span className="flex items-center gap-9  ">
-              System
+            <span
+              className={`flex items-center ${
+                locale === "en" ? "gap-9" : "gap-7.5"
+              }`}
+            >
+              {locale === "en" ? "System" : "Système"}
               <LaptopMinimal />
             </span>
             <KbdGroup>
@@ -109,15 +141,18 @@ export default function PreferenceButton() {
               <Kbd>S</Kbd>
             </KbdGroup>
           </DropdownMenuItem>
-          <DropdownMenuItem className="flex items-center justify-between cursor-pointer">
+          <DropdownMenuItem
+            className="flex items-center justify-between cursor-pointer"
+            onClick={changeLocalLang}
+          >
             <span className="flex items-center gap-9.5">
-              French
+              {locale === "en" ? "French" : "Anglais"}
               <Languages />
             </span>
             <KbdGroup>
               <Kbd>SHIFT</Kbd>
               <span>+</span>
-              <Kbd>F</Kbd>
+              <Kbd>{locale === "en" ? "F" : "A"}</Kbd>
             </KbdGroup>
           </DropdownMenuItem>
         </DropdownMenuGroup>
