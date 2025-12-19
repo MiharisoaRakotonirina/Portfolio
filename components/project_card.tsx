@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardContent,
@@ -16,6 +17,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { Github } from "lucide-react";
+import { useI18n } from "@/locales/client";
 
 export type ProjectCardProps = {
   title: string;
@@ -32,6 +34,7 @@ export default function ProjectCard({
   images,
   isFeatured,
 }: ProjectCardProps) {
+  const t = useI18n();
   return (
     <Card className="overflow-hidden w-full pt-0">
       <Carousel className="w-full">
@@ -59,7 +62,11 @@ export default function ProjectCard({
           <span className="text-xl">{title}</span>
           <div className="flex flex-row gap-4">
             <span>
-              {isFeatured && <Badge variant={"outline"}>Featured</Badge>}
+              {isFeatured && (
+                <Badge variant={"outline"}>
+                  {t("projects.secondProject.isFeatured")}
+                </Badge>
+              )}
             </span>
             <span>
               {isFeatured && (
