@@ -111,4 +111,10 @@
 
 A big thank you to [@Radiant-Wizard](https://github.com/Radiant-Wizard) for allowing me to draw inspiration from their awesome portfolio. Check out their portfolio here: [Portfolio Link](https://github.com/Radiant-Wizard/my-portfolio)
 
+# More details about next-international :
+
+```bash
+https://next-international.vercel.app/
+```
+
 ### 💡 You can take this portfolio as a template ✨
