@@ -5,12 +5,12 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
-import contactScheme from "@/lib/validation/contact_scheme";
-import { useTheme } from "next-themes";
-import { useCurrentLocale, useI18n } from "@/locales/client";
+import { createContactScheme } from "@/lib/validation/contact_scheme";
+import { useI18n } from "@/locales/client";
 
 export default function ContactForm() {
-  const { theme } = useTheme();
+  const t = useI18n();
+  const contactScheme = React.useMemo(() => createContactScheme(t), [t]);
 
   const [informations, setInformations] = React.useState({
     fullName: "",
@@ -39,7 +39,7 @@ export default function ContactForm() {
       setErrors(newErrors);
       setIsValid(false);
     }
-  }, [informations]);
+  }, [informations, contactScheme]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -94,10 +94,10 @@ export default function ContactForm() {
     const result = await response.json();
 
     if (result.success) {
-      toast.success("Message sent successfully!", {
+      toast.success(t("contact.contactForm.successfullySendToast.title"), {
         position: "bottom-right",
-        duration: 1500,
-        description: "Thanks for reaching out. I'll get back to you soon.",
+        duration: 2500,
+        description: t("contact.contactForm.successfullySendToast.description"),
         closeButton: true,
       });
       setInformations({
@@ -106,18 +106,20 @@ export default function ContactForm() {
         subject: "",
         message: "",
       });
+      setTouched({
+        fullName: false,
+        emailAddress: false,
+        subject: false,
+        message: false,
+      });
     } else {
-      toast.error("Ooops!", {
+      toast.error(t("contact.contactForm.failSendingToast.title"), {
         position: "bottom-right",
-        duration: 1500,
-        description:
-          "There is an error sending your message. Please try again later",
+        duration: 2500,
+        description: t("contact.contactForm.failSendingToast.description"),
       });
     }
   };
-
-  const t = useI18n();
-  const locale = useCurrentLocale();
 
   return (
     <form className="space-y-8 overflow-hidden" onSubmit={handleSubmit}>
@@ -137,11 +139,8 @@ export default function ContactForm() {
             value={informations.fullName}
           />
           <div className="h-2">
-            {touched.fullName && errors.fullName && locale === "en" && (
+            {touched.fullName && errors.fullName && (
               <p className="text-sm text-destructive">{errors.fullName}</p>
-            )}
-            {touched.message && errors.message && locale === "fr" && (
-              <p className="text-sm text-destructive">Au moins 5 caractères</p>
             )}
           </div>
         </div>
@@ -163,13 +162,8 @@ export default function ContactForm() {
             value={informations.emailAddress}
           />
           <div className="h-2">
-            {touched.emailAddress && errors.emailAddress && locale === "en" && (
+            {touched.emailAddress && errors.emailAddress && (
               <p className="text-sm text-destructive">{errors.emailAddress}</p>
-            )}
-            {touched.message && errors.message && locale === "fr" && (
-              <p className="text-sm text-destructive">
-                Adresse E-mail invalide
-              </p>
             )}
           </div>
         </div>
@@ -190,12 +184,8 @@ export default function ContactForm() {
           value={informations.subject}
         />
         <div className="h-2">
-          {touched.subject && errors.subject && locale === "en" && (
+          {touched.subject && errors.subject && (
             <p className="text-sm text-destructive">{errors.subject}</p>
-          )}
-
-          {touched.message && errors.message && locale === "fr" && (
-            <p className="text-sm text-destructive">Au moins 10 caractères</p>
           )}
         </div>
       </div>
@@ -214,11 +204,8 @@ export default function ContactForm() {
           onBlur={handleBlur}
         />
         <div className="h-2">
-          {touched.message && errors.message && locale === "en" && (
+          {touched.message && errors.message && (
             <p className="text-sm text-destructive">{errors.message}</p>
-          )}
-          {touched.message && errors.message && locale === "fr" && (
-            <p className="text-sm text-destructive">Au moins 30 caractères</p>
           )}
         </div>
       </div>
