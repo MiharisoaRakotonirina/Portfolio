@@ -110,6 +110,12 @@ export default {
           name: "Votre nom",
           subject: "Objet",
         },
+        errors: {
+          fullName: "At least 5 characters",
+          emailAddress: "Invalid email address",
+          subject: "At least 10 characters",
+          message: "At least 30 characters",
+        },
       },
       successfullySendToast: {
         title: "Message sent successfully!",
