@@ -2,8 +2,11 @@
 
 import { motion } from "motion/react";
 import ProjectCard from "./project_card";
+import { useI18n } from "@/locales/client";
 
 export default function Project() {
+  const t = useI18n();
+
   const images: string[] = [
     "/explore_the_world/img_1.jpg",
     "/explore_the_world/img_2.jpg",
@@ -31,10 +34,9 @@ export default function Project() {
     <section className="bg-muted/30 mb-16 p-4" id="projects">
       <div className="max-w-4xl mx-auto flex flex-col items-center justify-center min-h-screen w-full">
         <div className="text-center mb-8">
-          <h2 className="text-3xl mb-4">Projects</h2>
+          <h2 className="text-3xl mb-4">{t("projects.title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
-            A showcase of my recent work, demonstrating my skills in front-end
-            development and web technologies.
+            {t("projects.description")}
           </p>
         </div>
 
@@ -47,9 +49,7 @@ export default function Project() {
           >
             <ProjectCard
               title={"Explore The World"}
-              description={
-                "My first website, created for an exam, using HTML and CSS to showcase locations in Madagascar and beyond."
-              }
+              description={t("projects.firstProject.description")}
               technologies={techStack}
               images={images}
             />
@@ -62,9 +62,7 @@ export default function Project() {
           >
             <ProjectCard
               title={"Tapakila"}
-              description={
-                "This site is designed to manage ticket sales for events efficiently, such as a show."
-              }
+              description={t("projects.secondProject.description")}
               technologies={secondProjectStack}
               images={secondProject}
               isFeatured={true}
