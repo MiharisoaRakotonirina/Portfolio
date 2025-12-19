@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Linkedin, Mail, MessageCircleMore } from "lucide-react";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
@@ -10,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { useCurrentLocale, useI18n } from "@/locales/client";
 
 type NavItemProps = {
   id: string;
@@ -20,27 +22,29 @@ type NavItemProps = {
 };
 
 export default function DesktopNavigationBarContent() {
+  const t = useI18n();
+  const locale = useCurrentLocale();
   const [activeSection, setActiveSection] = React.useState("home");
   const NavItems: NavItemProps[] = [
     {
       id: "home",
-      label: "Home",
+      label: t("navigationBar.home"),
     },
     {
       id: "about",
-      label: "About",
+      label: t("navigationBar.about"),
     },
     {
       id: "skills",
-      label: "Skills",
+      label: t("navigationBar.skills"),
     },
     {
       id: "projects",
-      label: "Projects",
+      label: t("navigationBar.projects"),
     },
     {
       id: "experience",
-      label: "Experience",
+      label: t("navigationBar.experience"),
     },
     {
       id: "#",
@@ -72,7 +76,7 @@ export default function DesktopNavigationBarContent() {
         },
         {
           id: "contact",
-          label: "Send me a message",
+          label: t("navigationBar.contact.subLink"),
           icon: <MessageCircleMore className="w-6! h-6! text-orange-400" />,
         },
       ],
@@ -97,7 +101,11 @@ export default function DesktopNavigationBarContent() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
   return (
-    <nav className="space-x-4 flex flex-row max-md:hidden">
+    <nav
+      className={`${
+        locale === "en" ? "space-x-4" : "space-x-2"
+      } flex flex-row max-md:hidden `}
+    >
       {NavItems.map((NavItem: NavItemProps) => {
         if (!NavItem.subMenu) {
           return (
