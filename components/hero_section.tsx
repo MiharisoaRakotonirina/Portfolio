@@ -8,6 +8,7 @@ import { TextEffect } from "./motion-primitives/text-effect";
 import { Button } from "./ui/button";
 import { motion } from "motion/react";
 import Scroll from "@/lib/scrollTo";
+import { useI18n } from "@/locales/client";
 
 export default function HeroSection() {
   const socialNetworks: HeroSocialNetworkProps[] = [
@@ -24,6 +25,8 @@ export default function HeroSection() {
       icon: <Mail className="text-base" />,
     },
   ];
+
+  const t = useI18n();
 
   return (
     <section
@@ -64,14 +67,14 @@ export default function HeroSection() {
             },
           }}
         >
-          Hi, I&apos;m John Doe
+          {`${t("heroSection.greeting")} Mihary`}
         </TextEffect>
         <TextEffect
           per="char"
           delay={1.5}
           className="text-2xl text-muted-foreground"
         >
-          Front-End Developer
+          {t("heroSection.postTitle")}
         </TextEffect>
         <TextEffect
           per="char"
@@ -79,9 +82,7 @@ export default function HeroSection() {
           className="pt-8 text-lg text-muted-foreground max-w-2xl mx-auto"
           preset="blur"
         >
-          An enthusiastic computer science student focused on crafting
-          delightful front-end experiences. Now in my third year, exploring bold
-          ideas and expanding creative possibilities in tech.
+          {t("heroSection.description")}
         </TextEffect>
 
         <motion.div
@@ -114,7 +115,7 @@ export default function HeroSection() {
               className="cursor-pointer"
               onClick={() => Scroll("contact")}
             >
-              Get In Touch
+              {t("heroSection.heroContactCTA")}
             </Button>
           </motion.div>
           <motion.div
@@ -133,7 +134,7 @@ export default function HeroSection() {
               className="cursor-pointer"
               onClick={() => Scroll("about")}
             >
-              Learn More
+              {t("heroSection.heroLearnCTA")}
             </Button>
           </motion.div>
         </motion.div>
