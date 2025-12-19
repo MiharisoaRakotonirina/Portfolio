@@ -12,6 +12,7 @@ import Image from "next/image";
 import profilePic from "@/public/profile_image.png";
 import { GraduationCap, Info, LocateFixed } from "lucide-react";
 import { motion } from "motion/react";
+import { useCurrentLocale, useI18n } from "@/locales/client";
 
 type ProfileInfoProps = {
   title: string;
@@ -19,6 +20,9 @@ type ProfileInfoProps = {
 };
 
 export default function About() {
+  const t = useI18n();
+  const locale = useCurrentLocale();
+
   const Topics: string[] = [
     "Web Development",
     "Cybersecurity",
@@ -26,6 +30,15 @@ export default function About() {
     "Traveling",
     "Music",
     "MotorSport",
+  ];
+
+  const Sujets: string[] = [
+    "Développement Web",
+    "Cybersécurité",
+    "Échecs",
+    "Voyages",
+    "Musique",
+    "Sport automobile",
   ];
 
   const ProfileInfo: ProfileInfoProps[] = [
@@ -38,7 +51,10 @@ export default function About() {
       icon: <GraduationCap size={25} />,
     },
     {
-      title: "Available for work-study.",
+      title:
+        locale === "en"
+          ? "Available for work-study."
+          : "Disponible pour un stage ou une alternance.",
       icon: <Info size={25} />,
     },
   ];
@@ -50,10 +66,9 @@ export default function About() {
     >
       <div className="max-w-4xl  px-4 py-16">
         <div className="text-center mb-8">
-          <h2 className="text-3xl mb-4">About me</h2>
+          <h2 className="text-3xl mb-4">{t("about.title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
-            Get to know me more &mdash; my journey, interests, and what fuels my
-            passion for tech.
+            {t("about.description")}
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-8">
@@ -64,21 +79,16 @@ export default function About() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Card className="">
+              <Card>
                 <CardHeader>
-                  <CardTitle>My Background</CardTitle>
+                  <CardTitle>{t("about.backgroundCard.title")}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4 text-justify">
-                    I&apos;m a third-year Computer Science student at HEI,
-                    driven by a passion for crafting innovative solutions
-                    through code. My journey began with curiosity about
-                    technology and has grown into a true love for development.
+                    {t("about.backgroundCard.firstParagraph")}
                   </p>
                   <p className="text-muted-foreground text-justify">
-                    I&apos;m passionate about developing websites where users
-                    feel comfortable, creating interfaces that are intuitive and
-                    easy to navigate, focusing on both usability and design.
+                    {t("about.backgroundCard.secondParagraph")}
                   </p>
                 </CardContent>
               </Card>
@@ -91,21 +101,41 @@ export default function About() {
             >
               <Card>
                 <CardHeader>
-                  <CardTitle>Activities & Interests</CardTitle>
+                  <CardTitle>
+                    {t("about.activitiesAndInterestsCard.title")}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {Topics.map((topic: string, index: number) => {
-                      return (
-                        <Badge
-                          key={index}
-                          className="text-sm "
-                          variant={"secondary"}
-                        >
-                          {topic}
-                        </Badge>
-                      );
-                    })}
+                    {locale === "en" ? (
+                      <>
+                        {Topics.map((topic: string, index: number) => {
+                          return (
+                            <Badge
+                              key={index}
+                              className="text-sm "
+                              variant={"secondary"}
+                            >
+                              {topic}
+                            </Badge>
+                          );
+                        })}
+                      </>
+                    ) : (
+                      <>
+                        {Sujets.map((sujet: string, index: number) => {
+                          return (
+                            <Badge
+                              key={index}
+                              className="text-sm "
+                              variant={"secondary"}
+                            >
+                              {sujet}
+                            </Badge>
+                          );
+                        })}
+                      </>
+                    )}
                   </div>
                 </CardContent>
               </Card>
