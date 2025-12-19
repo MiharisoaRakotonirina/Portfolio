@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Card,
@@ -6,12 +7,13 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Github, Link, Linkedin, Locate, Mail } from "lucide-react";
+import { Github, Linkedin, Locate, Mail } from "lucide-react";
 import HeroSocialNetworkComponent from "./hero_social_network";
 import ContactForm from "./contact_form";
 import ContactDetails, { ContactDetailsProps } from "./contact_details";
 import { FaWhatsapp } from "react-icons/fa";
 import ContactResume from "./contact_resume";
+import { useI18n } from "@/locales/client";
 
 type socialLinksProps = {
   icon: React.ReactNode;
@@ -20,6 +22,7 @@ type socialLinksProps = {
 };
 
 export default function Contact() {
+  const t = useI18n();
   const socialLinks: socialLinksProps[] = [
     {
       icon: <Linkedin />,
@@ -46,7 +49,7 @@ export default function Contact() {
     },
     {
       icon: <Locate />,
-      label: "Location",
+      label: t("contact.contactDetails.location"),
       value: "Madagascar, Antananarivo",
     },
   ];
@@ -55,18 +58,18 @@ export default function Contact() {
     <section id="contact" className="py-20 bg-muted/30 overflow-x-hidden">
       <div className="max-w-4xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl mb-4">Let&apos;s connect</h2>
+          <h2 className="text-3xl sm:text-4xl mb-4">{t("contact.title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Always eager to discuss opportunities and tech projects.
+            {t("contact.description")}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12  min-w-0">
           <Card>
             <CardHeader>
-              <CardTitle>Send Me a Note</CardTitle>
+              <CardTitle>{t("contact.contactForm.title")}</CardTitle>
               <CardDescription>
-                Complete the form below and I will reply shortly.
+                {t("contact.contactForm.description")}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -77,9 +80,9 @@ export default function Contact() {
           <div className="space-y-8 min-w-0">
             <Card>
               <CardHeader>
-                <CardTitle>Contact Details</CardTitle>
+                <CardTitle>{t("contact.contactDetails.title")}</CardTitle>
                 <CardDescription>
-                  Don&apos;t hesitate to contact me via any of these methods
+                  {t("contact.contactDetails.description")}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -98,9 +101,9 @@ export default function Contact() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Follow me</CardTitle>
+                <CardTitle>{t("contact.socialNetworks.title")}</CardTitle>
                 <CardDescription>
-                  Connect with me on social network and check my latest work
+                  {t("contact.socialNetworks.description")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
