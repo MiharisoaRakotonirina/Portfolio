@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { toast } from "sonner";
 import contactScheme from "@/lib/validation/contact_scheme";
 import { useTheme } from "next-themes";
+import { useCurrentLocale, useI18n } from "@/locales/client";
 
 export default function ContactForm() {
   const { theme } = useTheme();
@@ -114,26 +115,33 @@ export default function ContactForm() {
       });
     }
   };
+
+  const t = useI18n();
+  const locale = useCurrentLocale();
+
   return (
     <form className="space-y-8 overflow-hidden" onSubmit={handleSubmit}>
       <div className="flex lg:flex-row flex-col gap-4 lg:gap-8">
         <div className="space-y-2 flex-1 min-w-0">
-          <Label>Name</Label>
+          <Label>{t("contact.contactForm.fields.label.name")}</Label>
           <Input
             onBlur={handleBlur}
             type="text"
             className={`w-full ${
               touched.fullName && errors.fullName ? "border-destructive" : ""
             }`}
-            placeholder={"Your name"}
+            placeholder={t("contact.contactForm.fields.placeholder.name")}
             onChange={handleChange}
             required={true}
             name="fullName"
             value={informations.fullName}
           />
-          <div className="min-h-2">
-            {touched.fullName && errors.fullName && (
+          <div className="h-2">
+            {touched.fullName && errors.fullName && locale === "en" && (
               <p className="text-sm text-destructive">{errors.fullName}</p>
+            )}
+            {touched.message && errors.message && locale === "fr" && (
+              <p className="text-sm text-destructive">Au moins 5 caractères</p>
             )}
           </div>
         </div>
@@ -148,37 +156,46 @@ export default function ContactForm() {
                 ? "border-destructive"
                 : ""
             }`}
-            placeholder={"your.email@example.com"}
+            placeholder={t("contact.contactForm.fields.placeholder.email")}
             onChange={handleChange}
             required={true}
             name="emailAddress"
             value={informations.emailAddress}
           />
-          <div className="min-h-2">
-            {touched.emailAddress && errors.emailAddress && (
+          <div className="h-2">
+            {touched.emailAddress && errors.emailAddress && locale === "en" && (
               <p className="text-sm text-destructive">{errors.emailAddress}</p>
+            )}
+            {touched.message && errors.message && locale === "fr" && (
+              <p className="text-sm text-destructive">
+                Adresse E-mail invalide
+              </p>
             )}
           </div>
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label>Subject</Label>
+        <Label>{t("contact.contactForm.fields.label.subject")}</Label>
         <Input
           onBlur={handleBlur}
           type="text"
           className={`w-full ${
             touched.subject && errors.subject ? "border-destructive" : ""
           }`}
-          placeholder="What would you like to discuss?"
+          placeholder={t("contact.contactForm.fields.placeholder.subject")}
           onChange={handleChange}
           required={true}
           name="subject"
           value={informations.subject}
         />
-        <div className="min-h-2">
-          {touched.subject && errors.subject && (
+        <div className="h-2">
+          {touched.subject && errors.subject && locale === "en" && (
             <p className="text-sm text-destructive">{errors.subject}</p>
+          )}
+
+          {touched.message && errors.message && locale === "fr" && (
+            <p className="text-sm text-destructive">Au moins 10 caractères</p>
           )}
         </div>
       </div>
@@ -189,16 +206,19 @@ export default function ContactForm() {
           className={`w-full resize-none h-40  ${
             touched.message && errors.message ? "border-destructive" : ""
           }`}
-          placeholder={"Tell me about your project or just say 👋"}
+          placeholder={t("contact.contactForm.fields.placeholder.message")}
           onChange={handleChange}
           required={true}
           name="message"
           value={informations.message}
           onBlur={handleBlur}
         />
-        <div className="min-h-2">
-          {touched.message && errors.message && (
+        <div className="h-2">
+          {touched.message && errors.message && locale === "en" && (
             <p className="text-sm text-destructive">{errors.message}</p>
+          )}
+          {touched.message && errors.message && locale === "fr" && (
+            <p className="text-sm text-destructive">Au moins 30 caractères</p>
           )}
         </div>
       </div>
@@ -208,7 +228,7 @@ export default function ContactForm() {
         disabled={!isValid}
         variant={"outline"}
       >
-        Send Message
+        {t("contact.contactForm.sendButton.title")}
       </Button>
     </form>
   );
