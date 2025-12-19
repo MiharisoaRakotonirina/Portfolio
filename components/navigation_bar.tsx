@@ -10,7 +10,7 @@ export default function NavigationBar() {
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="cursor-pointer" onClick={() => Scroll("home")}>
-            <span className="text-xl font-semibold text-primary">John Doe</span>
+            <span className="text-xl font-semibold text-primary">Mi</span>
           </div>
           <DesktopNavigationBarContent />
         </div>
