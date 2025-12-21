@@ -13,10 +13,8 @@ export default function NavigationBar() {
             <span className="text-xl font-semibold text-primary">Mi</span>
           </div>
           <DesktopNavigationBarContent />
+          <MobileNavigationBar />
         </div>
-
-        {/* Mobile Navigation */}
-        <MobileNavigationBar />
       </div>
     </header>
   );

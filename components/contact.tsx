@@ -58,7 +58,9 @@ export default function Contact() {
     <section id="contact" className="py-20 bg-muted/30 overflow-x-hidden">
       <div className="max-w-4xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl mb-4">{t("contact.title")}</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl mb-4">
+            {t("contact.title")}
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t("contact.description")}
           </p>

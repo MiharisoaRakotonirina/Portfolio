@@ -66,7 +66,7 @@ export default function About() {
     >
       <div className="max-w-4xl  px-4 py-16">
         <div className="text-center mb-8">
-          <h2 className="text-3xl mb-4">{t("about.title")}</h2>
+          <h2 className="text-3xl font-semibold mb-4">{t("about.title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
             {t("about.description")}
           </p>
@@ -113,7 +113,7 @@ export default function About() {
                           return (
                             <Badge
                               key={index}
-                              className="text-sm "
+                              className="text-sm font-normal"
                               variant={"secondary"}
                             >
                               {topic}
@@ -127,7 +127,7 @@ export default function About() {
                           return (
                             <Badge
                               key={index}
-                              className="text-sm "
+                              className="text-sm font-normal"
                               variant={"secondary"}
                             >
                               {sujet}

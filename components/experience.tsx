@@ -20,7 +20,9 @@ export default function Experience() {
     >
       <div className="max-w-4xl px-4 mx-auto flex flex-col items-center justify-center min-h-screen w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl mb-4">{t("experience.title")}</h2>
+          <h2 className="text-3xl font-semibold mb-4">
+            {t("experience.title")}
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
             {t("experience.description")}
           </p>

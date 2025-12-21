@@ -12,11 +12,11 @@ export default async function Skills() {
   return (
     <section
       id="skills"
-      className="flex items-center justify-center min-h-screen mb-16"
+      className="flex items-center justify-center min-h-screen mb-16 mt-4"
     >
       <div className="max-w-4xl px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl mb-4">{t("skills.title")}</h2>
+          <h2 className="text-3xl font-semibold mb-4">{t("skills.title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl text-center mx-auto">
             {t("skills.description")}
           </p>

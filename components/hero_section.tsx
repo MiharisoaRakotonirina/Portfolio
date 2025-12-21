@@ -8,7 +8,7 @@ import { TextEffect } from "./motion-primitives/text-effect";
 import { Button } from "./ui/button";
 import { motion } from "motion/react";
 import Scroll from "@/lib/scrollTo";
-import { useI18n } from "@/locales/client";
+import { useCurrentLocale, useI18n } from "@/locales/client";
 
 export default function HeroSection() {
   const socialNetworks: HeroSocialNetworkProps[] = [
@@ -27,6 +27,7 @@ export default function HeroSection() {
   ];
 
   const t = useI18n();
+  const locale = useCurrentLocale();
 
   return (
     <section
@@ -35,7 +36,7 @@ export default function HeroSection() {
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <TextEffect
-          className="text-7xl mb-4"
+          className="text-7xl mb-4 max-md:text-6xl max-sm:text-3xl font-semibold"
           per="char"
           delay={0.5}
           variants={{
@@ -72,14 +73,14 @@ export default function HeroSection() {
         <TextEffect
           per="char"
           delay={1.5}
-          className="text-2xl text-muted-foreground"
+          className="text-2xl max-sm:text-xl text-muted-foreground"
         >
           {t("heroSection.postTitle")}
         </TextEffect>
         <TextEffect
           per="char"
           delay={2.5}
-          className="pt-8 text-lg text-muted-foreground max-w-2xl mx-auto"
+          className="pt-8 text-lg max-sm:text-base text-muted-foreground max-w-2xl mx-auto"
           preset="blur"
         >
           {t("heroSection.description")}
@@ -131,7 +132,7 @@ export default function HeroSection() {
             <Button
               variant={"outline"}
               size={"lg"}
-              className="cursor-pointer"
+              className={`cursor-pointer ${locale === "fr" && "px-9"}`}
               onClick={() => Scroll("about")}
             >
               {t("heroSection.heroLearnCTA")}

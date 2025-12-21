@@ -13,7 +13,7 @@ import {
 } from "./ui/dropdown-menu";
 import { useCurrentLocale, useI18n } from "@/locales/client";
 
-type NavItemProps = {
+export type NavItemProps = {
   id: string;
   label: string;
   icon?: React.ReactNode;
