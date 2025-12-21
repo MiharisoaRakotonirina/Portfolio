@@ -6,7 +6,7 @@ export default {
     projects: "Projects",
     experience: "Experience",
     contact: {
-      subLink: "Send me a message",
+      subLink: "Feel free to contact me",
     },
   },
 

@@ -6,7 +6,7 @@ export default {
     projects: "Projets",
     experience: "Expérience",
     contact: {
-      subLink: "Envoyez-moi un message",
+      subLink: "N’hésitez pas à me contacter",
     },
   },
 
@@ -14,7 +14,7 @@ export default {
     greeting: "Bonjour, Je suis ",
     description:
       "Étudiant en informatique passionné par le développement front-end. En troisième année, j'explore de nouvelles idées et repousse les limites créatives pour offrir des expériences uniques.",
-    heroContactCTA: "Contactez Moi",
+    heroContactCTA: "Entrons en contact",
     heroLearnCTA: "En Savoir Plus",
     postTitle: "Développeur Front-End",
   },
