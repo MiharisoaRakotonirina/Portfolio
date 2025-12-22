@@ -27,7 +27,8 @@ type Locale = (typeof LOCALES)[number];
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
+  const params = LOCALES.map((locale) => ({ locale }));
+  return params;
 }
 
 export default async function RootLayout({
@@ -39,7 +40,9 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
 
-  if (!LOCALES.includes(locale as Locale)) notFound();
+  if (!LOCALES.includes(locale as Locale)) {
+    notFound();
+  }
   return (
     <html lang={locale}>
       <body
