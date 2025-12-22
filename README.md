@@ -117,4 +117,10 @@ A big thank you to [@Radiant-Wizard](https://github.com/Radiant-Wizard) for allo
 https://next-international.vercel.app/
 ```
 
+# More details about building a multilingual 404 — not found Page in a Next.js Internationalized App
+
+```bash
+https://medium.com/@thomasaugot/how-to-build-a-multilingual-404-not-found-page-in-a-next-js-15-internationalized-app-a53f4be85096
+```
+
 ### 💡 You can take this portfolio as a template ✨
