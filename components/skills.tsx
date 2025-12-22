@@ -1,9 +1,11 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { getI18n } from "@/locales/server";
+import { useI18n } from "@/locales/client";
 
-export default async function Skills() {
-  const t = await getI18n();
+export default function Skills() {
+  const t = useI18n();
 
   const ProgrammingLanguages: string[] = ["JavaScript", "TypeScript", "SQL"];
   const Frameworks: string[] = ["React", "Next.js", "Tailwind CSS"];

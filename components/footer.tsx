@@ -1,8 +1,10 @@
-import { getI18n } from "@/locales/server";
+"use client";
+
+import { useI18n } from "@/locales/client";
 import Link from "next/link";
 
-export default async function Footer() {
-  const t = await getI18n();
+export default function Footer() {
+  const t = useI18n();
 
   return (
     <div className="bg-muted/50 border-t border-border py-8">
