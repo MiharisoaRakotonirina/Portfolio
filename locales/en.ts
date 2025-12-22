@@ -150,4 +150,10 @@ export default {
     description:
       "© 2025 Miharisoa. Built with React, Next.js, ShadCN UI and Tailwind CSS.",
   },
+
+  notFound: {
+    title: "Page Not Found 😕",
+    message: "Oops! The page you're looking for doesn't exist.",
+    returnHome: "Back to the homepage",
+  },
 } as const;

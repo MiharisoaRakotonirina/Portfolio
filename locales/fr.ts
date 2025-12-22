@@ -152,4 +152,10 @@ export default {
     description:
       "© 2025 Miharisoa. Conçu avec React, Next.js, ShadCN UI et Tailwind CSS.",
   },
+
+  notFound: {
+    title: "Page non trouvée 😕",
+    message: "Oups ! La page que vous recherchez n'existe pas.",
+    returnHome: "Retourner à l'accueil",
+  },
 } as const;
