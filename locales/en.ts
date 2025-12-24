@@ -122,9 +122,14 @@ export default {
         description: "Thanks for reaching out. I'll get back to you soon.",
       },
       failSendingToast: {
-        title: "Ooops!",
+        title: "An error occurred",
         description:
           "There is an error sending your message. Please try again later",
+      },
+      catchErrorToast: {
+        title: "An error occurred",
+        description:
+          "There was a problem sending your message. Please try again later. If the issue persists, feel free to contact me directly.",
       },
       sendButton: {
         title: "Send Message",

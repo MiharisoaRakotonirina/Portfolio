@@ -123,9 +123,14 @@ export default {
         description: "Merci pour votre message. Je vous répondrai bientôt.",
       },
       failSendingToast: {
-        title: "Oups !",
+        title: "Une erreur est survenue",
         description:
           "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer plus tard.",
+      },
+      catchErrorToast: {
+        title: "Une erreur est survenue",
+        description:
+          "Il y a eu un problème lors de l'envoi de votre message. Veuillez réessayer plus tard. Si l'erreur persiste, contactez-moi directement.",
       },
       sendButton: {
         title: "Envoyer",
