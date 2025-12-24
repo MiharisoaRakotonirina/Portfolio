@@ -82,41 +82,51 @@ export default function ContactForm() {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
-    if (result.success) {
-      toast.success(t("contact.contactForm.successfullySendToast.title"), {
+      if (result.success) {
+        toast.success(t("contact.contactForm.successfullySendToast.title"), {
+          position: "bottom-right",
+          duration: 2500,
+          description: t(
+            "contact.contactForm.successfullySendToast.description"
+          ),
+          closeButton: true,
+        });
+        setInformations({
+          fullName: "",
+          emailAddress: "",
+          subject: "",
+          message: "",
+        });
+        setTouched({
+          fullName: false,
+          emailAddress: false,
+          subject: false,
+          message: false,
+        });
+      } else {
+        toast.error(t("contact.contactForm.failSendingToast.title"), {
+          position: "bottom-right",
+          duration: 2500,
+          description: t("contact.contactForm.failSendingToast.description"),
+        });
+      }
+    } catch (error) {
+      toast.error(t("contact.contactForm.catchErrorToast.title"), {
         position: "bottom-right",
         duration: 2500,
-        description: t("contact.contactForm.successfullySendToast.description"),
-        closeButton: true,
-      });
-      setInformations({
-        fullName: "",
-        emailAddress: "",
-        subject: "",
-        message: "",
-      });
-      setTouched({
-        fullName: false,
-        emailAddress: false,
-        subject: false,
-        message: false,
-      });
-    } else {
-      toast.error(t("contact.contactForm.failSendingToast.title"), {
-        position: "bottom-right",
-        duration: 2500,
-        description: t("contact.contactForm.failSendingToast.description"),
+        description: t("contact.contactForm.catchErrorToast.description"),
       });
     }
   };
