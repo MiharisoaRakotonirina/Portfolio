@@ -64,6 +64,7 @@ export default function Experience() {
               </CardContent>
             </Card>
           </div>
+
           <div>
             <span className="flex items-center gap-4 mb-4">
               <FaUserTie className="text-3xl text-orange-400" />
@@ -71,6 +72,7 @@ export default function Experience() {
                 {t("experience.professionalPath.title")}
               </h2>
             </span>
+
             <Card>
               <CardHeader>
                 <CardTitle>
@@ -88,18 +90,18 @@ export default function Experience() {
                 <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
                   <li>
                     {t(
-                      "experience.professionalPath.cardContent.firstDescription"
+                      "experience.professionalPath.cardContent.firstDescription",
                     )}{" "}
                     <strong>
                       {t(
-                        "experience.professionalPath.cardContent.postDescription"
+                        "experience.professionalPath.cardContent.postDescription",
                       )}
                     </strong>{" "}
                     (React JS, TypeScript)
                   </li>
                   <li>
                     {t(
-                      "experience.professionalPath.cardContent.secondDescription"
+                      "experience.professionalPath.cardContent.secondDescription",
                     )}{" "}
                     <strong>
                       {t("experience.professionalPath.cardContent.schedule")}
@@ -107,17 +109,83 @@ export default function Experience() {
                   </li>
                   <li>
                     {t(
-                      "experience.professionalPath.cardContent.lastDescription"
+                      "experience.professionalPath.cardContent.lastDescription",
                     )}{" "}
                     <strong>
                       {t(
-                        "experience.professionalPath.cardContent.firstCondition"
+                        "experience.professionalPath.cardContent.firstCondition",
                       )}
                     </strong>{" "}
                     {t("experience.professionalPath.cardContent.keyword")}{" "}
                     <strong>
                       {t(
-                        "experience.professionalPath.cardContent.lastCondition"
+                        "experience.professionalPath.cardContent.lastCondition",
+                      )}
+                    </strong>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <div className="flex items-center gap-3 my-4">
+              <div className="flex-1 h-px bg-border" />
+              <span className="text-sm text-muted-foreground">
+                {locale === "en" ? "or" : "ou"}
+              </span>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>
+                  {t("experience.professionalPath.internshipCard.cardTitle")}
+                </CardTitle>
+                <CardDescription>
+                  {t("experience.professionalPath.internshipCard.cardSubtitle")}
+                </CardDescription>
+                <CardDescription className="flex flex-row items-center gap-3 mt-4">
+                  <Clock />
+                  {t("experience.professionalPath.cardDescription")}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                  <li>
+                    {t(
+                      "experience.professionalPath.internshipCard.cardContent.firstDescription",
+                    )}{" "}
+                    <strong>
+                      {t(
+                        "experience.professionalPath.internshipCard.cardContent.postDescription",
+                      )}
+                    </strong>{" "}
+                    (React JS, TypeScript)
+                  </li>
+                  <li>
+                    {t(
+                      "experience.professionalPath.internshipCard.cardContent.secondDescription",
+                    )}{" "}
+                    <strong>
+                      {t(
+                        "experience.professionalPath.internshipCard.cardContent.schedule",
+                      )}
+                    </strong>
+                  </li>
+                  <li>
+                    {t(
+                      "experience.professionalPath.internshipCard.cardContent.lastDescription",
+                    )}{" "}
+                    <strong>
+                      {t(
+                        "experience.professionalPath.internshipCard.cardContent.firstCondition",
+                      )}
+                    </strong>{" "}
+                    {t(
+                      "experience.professionalPath.internshipCard.cardContent.keyword",
+                    )}{" "}
+                    <strong>
+                      {t(
+                        "experience.professionalPath.internshipCard.cardContent.lastCondition",
                       )}
                     </strong>
                   </li>
