@@ -55,11 +55,11 @@ export default {
       "Une présentation de mes réalisations récentes, mettant en avant mes compétences en développement front-end et technologies web.",
     firstProject: {
       description:
-        "Mon premier site, réalisé pour un examen, utilisant HTML et CSS pour présenter des lieux à Madagascar et ailleurs.",
+        "Site vitrine présentant des destinations touristiques à Madagascar et ailleurs, conçu avec HTML et CSS.",
     },
     secondProject: {
       description:
-        "Ce site est conçu pour gérer efficacement la vente de billets pour des événements, comme un spectacle.",
+        "Application de billetterie événementielle développée en équipe, pour la gestion et la vente de billets en ligne.",
       isFeatured: "Contributeur",
     },
   },
@@ -76,7 +76,7 @@ export default {
     },
     professionalPath: {
       title: "Parcours professionnel",
-      cardTitle: "Étudiant à la recherche d'un stage / alternance",
+      cardTitle: "Étudiant à la recherche d'une alternance",
       cardSubtitle: "Je cherche ma première opportunité professionnelle",
       cardDescription: "Dans les plus brefs délais",
       cardContent: {
@@ -88,6 +88,20 @@ export default {
         firstCondition: "télétravail ",
         keyword: "et ",
         lastCondition: "une disponibilité le week-end",
+      },
+      internshipCard: {
+        cardTitle: "Ou d'un stage à temps plein",
+        cardSubtitle: "Minimum 3 mois",
+        cardContent: {
+          firstDescription: "Poste en stage en tant que ",
+          postDescription: "Développeur Front-End",
+          secondDescription: "Temps de travail : ",
+          schedule: "Temps plein",
+          lastDescription: "Disponible pour du ",
+          firstCondition: "télétravail ",
+          keyword: "et ",
+          lastCondition: "une disponibilité le week-end",
+        },
       },
     },
   },
@@ -155,7 +169,7 @@ export default {
   footer: {
     inspiration: "Inspiré par Radiant-Wizard, merci à lui 🙏",
     description:
-      "© 2025 Miharisoa. Conçu avec React, Next.js, ShadCN UI et Tailwind CSS.",
+      "© 2026 Miharisoa. Conçu avec React, Next.js, ShadCN UI et Tailwind CSS.",
   },
 
   notFound: {

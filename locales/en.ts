@@ -55,11 +55,11 @@ export default {
       "A showcase of my recent work, demonstrating my skills in front-end development and web technologies.",
     firstProject: {
       description:
-        "My first website, created for an exam, using HTML and CSS to showcase locations in Madagascar and beyond.",
+        "A showcase website presenting tourist destinations in Madagascar and beyond, built with HTML and CSS.",
     },
     secondProject: {
       description:
-        "This site is designed to manage ticket sales for events efficiently, such as a show.",
+        "An event ticketing application built as a team project, handling online ticket management and sales.",
       isFeatured: "Featured",
     },
   },
@@ -90,6 +90,20 @@ export default {
         keyword: "and ",
         lastCondition: "weekend availability",
       },
+      internshipCard: {
+        cardTitle: "Or a Full-Time Internship",
+        cardSubtitle: "Minimum 3 months",
+        cardContent: {
+          firstDescription: "Internship position as a ",
+          postDescription: "Front-End Developer",
+          secondDescription: "Schedule : ",
+          schedule: "Full-time",
+          lastDescription: "Open to ",
+          firstCondition: "remote work ",
+          keyword: "and ",
+          lastCondition: "weekend availability",
+        },
+      },
     },
   },
 
@@ -107,8 +121,8 @@ export default {
           message: "Tell me about your project or just say 👋",
         },
         label: {
-          name: "Votre nom",
-          subject: "Objet",
+          name: "Your name",
+          subject: "Subject",
         },
         errors: {
           fullName: "At least 5 characters",
@@ -153,7 +167,7 @@ export default {
   footer: {
     inspiration: "Inspired by Radiant-Wizard , thanks to him 🙏",
     description:
-      "© 2025 Miharisoa. Built with React, Next.js, ShadCN UI and Tailwind CSS.",
+      "© 2026 Miharisoa. Built with React, Next.js, ShadCN UI and Tailwind CSS.",
   },
 
   notFound: {
