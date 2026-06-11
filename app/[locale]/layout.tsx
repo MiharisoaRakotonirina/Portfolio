@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 // @ts-ignore
 import "./globals.css";
 import { Toaster } from "sonner";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/custom/theme-provider";
 import Providers from "./providers";
 import { notFound } from "next/navigation";
 import { GoogleTagManager } from "@next/third-parties/google";

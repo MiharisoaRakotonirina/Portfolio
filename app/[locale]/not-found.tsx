@@ -1,6 +1,6 @@
 "use client";
 
-import PreferenceButton from "@/components/preference_button";
+import PreferenceButton from "@/components/custom/preference_button";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/locales/client";
 import Link from "next/link";
