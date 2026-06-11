@@ -165,7 +165,9 @@ export default function About() {
                       (info: ProfileInfoProps, index: number) => {
                         return (
                           <div key={index} className="flex items-center gap-4">
-                            <span className="text-orange-400">{info.icon}</span>
+                            <span className="text-orange-600 dark:text-orange-400">
+                              {info.icon}
+                            </span>
                             <span className="ml-2 text-muted-foreground">
                               {info.title}
                             </span>

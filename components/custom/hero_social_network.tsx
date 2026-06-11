@@ -13,7 +13,7 @@ export default function HeroSocialNetworkComponent({
     <Link
       href={link}
       target="_blank"
-      className="border p-2 rounded-full bg-primary/10 text-orange-400 inline-flex items-center justify-center"
+      className="border p-2 rounded-full bg-primary/10 text-orange-600 dark:text-orange-400 inline-flex items-center justify-center"
     >
       {icon}
     </Link>

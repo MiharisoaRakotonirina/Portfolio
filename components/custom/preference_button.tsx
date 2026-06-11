@@ -76,7 +76,7 @@ export default function PreferenceButton() {
           aria-label="Settings"
           variant={"outline"}
         >
-          <Settings className="text-orange-400" />
+          <Settings className="text-orange-600 dark:text-orange-400" />
         </Button>
       </DropdownMenuTrigger>
 

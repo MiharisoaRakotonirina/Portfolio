@@ -31,7 +31,10 @@ export default function Experience() {
         <div className="grid lg:grid-cols-2 gap-8 w-full">
           <div>
             <span className="flex items-center gap-4 mb-4">
-              <School className="text-orange-400" size={32} />
+              <School
+                className="text-orange-600 dark:text-orange-400"
+                size={32}
+              />
               <h2 className="text-lg">{t("experience.academicPath.title")}</h2>
             </span>
             <Card>
@@ -67,7 +70,7 @@ export default function Experience() {
 
           <div>
             <span className="flex items-center gap-4 mb-4">
-              <FaUserTie className="text-3xl text-orange-400" />
+              <FaUserTie className="text-3xl text-orange-600 dark:text-orange-400" />
               <h2 className="text-lg">
                 {t("experience.professionalPath.title")}
               </h2>

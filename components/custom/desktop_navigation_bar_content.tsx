@@ -53,31 +53,41 @@ export default function DesktopNavigationBarContent() {
         {
           id: "linkedin",
           label: "LinkedIn",
-          icon: <Linkedin className="w-5! h-5! text-orange-400" />,
+          icon: (
+            <Linkedin className="w-5! h-5! text-orange-600 dark:text-orange-400" />
+          ),
           link: "https://www.linkedin.com/in/miharisoa-rakotonirina",
         },
         {
           id: "email",
           label: "Email",
           link: "mailto:miharisoa.rakotonirina.06@gmail.com",
-          icon: <Mail className="w-6! h-6! text-orange-400" />,
+          icon: (
+            <Mail className="w-6! h-6! text-orange-600 dark:text-orange-400" />
+          ),
         },
         {
           id: "whatsapp",
           label: "WhatsApp",
-          icon: <FaWhatsapp className="w-6! h-6! text-orange-400" />,
+          icon: (
+            <FaWhatsapp className="w-6! h-6! text-orange-600 dark:text-orange-400" />
+          ),
           link: "https://wa.me/261320250500",
         },
         {
           id: "telegram",
           label: "Telegram",
-          icon: <FaTelegramPlane className="w-6! h-6! text-orange-400" />,
+          icon: (
+            <FaTelegramPlane className="w-6! h-6! text-orange-600 dark:text-orange-400" />
+          ),
           link: "https://t.me/MIHARISOA_RAKOTONIRINA",
         },
         {
           id: "contact",
           label: t("navigationBar.contact.subLink"),
-          icon: <MessageCircleMore className="w-6! h-6! text-orange-400" />,
+          icon: (
+            <MessageCircleMore className="w-6! h-6! text-orange-600 dark:text-orange-400" />
+          ),
         },
       ],
     },
@@ -145,14 +155,14 @@ export default function DesktopNavigationBarContent() {
                       {subMenu.link ? (
                         <Link
                           href={subMenu.link}
-                          className="border p-2 rounded-full bg-accent text-orange-400!"
+                          className="border p-2 rounded-full bg-accent text-orange-600 dark:text-orange-400!"
                           target="_blank"
                         >
                           <span>{subMenu.icon}</span>
                         </Link>
                       ) : (
                         <span
-                          className="border p-2 rounded-full bg-accent text-orange-400!"
+                          className="border p-2 rounded-full bg-accent text-orange-600 dark:text-orange-400!"
                           onClick={() => Scroll(subMenu.id)}
                         >
                           {subMenu.icon}
