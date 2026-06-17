@@ -16,13 +16,13 @@ export default function ContactResume() {
           <a
             href={
               locale === "en"
-                ? "Miharisoa_Rakotonirina_CV_EN.pdf"
-                : "Miharisoa_Rakotonirina_CV_FR.pdf"
+                ? "CV_EN_Miharisoa_Rakotonirina.pdf"
+                : "CV_FR_Miharisoa_Rakotonirina.pdf"
             }
             download={
               locale === "en"
-                ? "Miharisoa_Rakotonirina_CV_EN"
-                : "Miharisoa_Rakotonirina_CV_FR"
+                ? "CV_EN_Miharisoa_Rakotonirina"
+                : "CV_FR_Miharisoa_Rakotonirina"
             }
           >
             <Button variant={"outline"} className="cursor-pointer">
