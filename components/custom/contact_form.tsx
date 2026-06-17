@@ -8,6 +8,8 @@ import { toast } from "sonner";
 import { createContactScheme } from "@/lib/validation/contact_scheme";
 import { useI18n } from "@/locales/client";
 
+const WEB3_FORMS_ACCESS_KEY=process.env.NEXT_PUBLIC_WEB3_FORMS_ACCESS_KEY as string
+
 export default function ContactForm() {
   const t = useI18n();
   const contactScheme = React.useMemo(() => createContactScheme(t), [t]);
@@ -78,7 +80,7 @@ export default function ContactForm() {
 
     const formData = new FormData(event.target as HTMLFormElement);
 
-    formData.append("access_key", "b9e2a973-683b-4ff3-896e-cce46d4cebf8");
+    formData.append("access_key", WEB3_FORMS_ACCESS_KEY);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
