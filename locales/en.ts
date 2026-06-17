@@ -13,22 +13,22 @@ export default {
   heroSection: {
     greeting: "Hi, I'm",
     description:
-      "An enthusiastic computer science student focused on crafting delightful front-end experiences. Now in my third year, exploring bold ideas and expanding creative possibilities in tech.",
+        "Third-year computer science student learning Full-Stack development one project at a time. I like understanding how things work and finding better ways to build things people actually use.",
     heroContactCTA: "Get In Touch",
     heroLearnCTA: "Learn More",
-    postTitle: "Front-End developer",
+    postTitle: "Full-Stack TypeScript Developer",
   },
 
   about: {
     title: "About Me",
     description:
-      "Get to know me more — my journey, interests, and what fuels my passion for tech.",
+        "Get to know me more — my journey, interests, and what fuels my passion for tech.",
     backgroundCard: {
       title: "My Background",
       firstParagraph:
-        "I'm a third-year Computer Science student at HEI, driven by a passion for crafting innovative solutions through code. My journey began with curiosity about technology and has grown into a true love for development.",
+          "I'm a third-year Computer Science student at HEI, driven by a passion for crafting innovative solutions through code. My journey began with curiosity about technology and has grown into a true love for development.",
       secondParagraph:
-        "I'm passionate about developing websites where users feel comfortable, creating interfaces that are intuitive and easy to navigate, focusing on both usability and design.",
+          "I'm passionate about developing websites where users feel comfortable, creating interfaces that are intuitive and easy to navigate, focusing on both usability and design.",
     },
     activitiesAndInterestsCard: {
       title: "Activities & Interests",
@@ -41,7 +41,7 @@ export default {
   skills: {
     title: "Technical Skills & Frameworks",
     description:
-      "A detailed summary of my technical expertise and the tools I work with.",
+        "A detailed summary of my technical expertise and the tools I work with.",
     cards: {
       programmingLanguagesTitle: "Programming Languages",
       frameworkAndLibrariesTitle: "Frameworks & Libraries",
@@ -52,14 +52,14 @@ export default {
   projects: {
     title: "Completed Projects",
     description:
-      "A showcase of my recent work, demonstrating my skills in front-end development and web technologies.",
+        "A showcase of my recent work, demonstrating my skills in Full-Stack development and web technologies.",
     firstProject: {
       description:
-        "A showcase website presenting tourist destinations in Madagascar and beyond, built with HTML and CSS.",
+          "A showcase website presenting tourist destinations in Madagascar and beyond, built with HTML and CSS.",
     },
     secondProject: {
       description:
-        "An event ticketing application built as a team project, handling online ticket management and sales.",
+          "An event ticketing application built as a team project, handling online ticket management and sales.",
       isFeatured: "Featured",
     },
   },
@@ -67,12 +67,12 @@ export default {
   experience: {
     title: "Education & Professional Path",
     description:
-      "A summary of my academic path and professional experience in the tech sector.",
+        "A summary of my academic path and professional experience in the tech sector.",
     academicPath: {
       title: "Academic background",
       cardTitle: "Bachelor's Degree in Computer Science",
       courseSubject:
-        "Object-Oriented Programming, Algorithms and Data Structures, Database Systems, Web and Mobile Development, Cloud Computing,Software Engineering, Data Analysis.",
+          "Object-Oriented Programming, Algorithms and Data Structures, Database Systems, Web and Mobile Development, Cloud Computing,Software Engineering, Data Analysis.",
     },
 
     professionalPath: {
@@ -82,9 +82,9 @@ export default {
       cardDescription: "At the earliest possible time",
       cardContent: {
         firstDescription: "Work-study position as a ",
-        postDescription: "Front-End Developer",
+        postDescription: "Full-Stack TypeScript Developer",
         secondDescription: "Schedule : ",
-        schedule: "22 hours per week",
+        schedule: "Full-time",
         lastDescription: "Open to ",
         firstCondition: "remote work ",
         keyword: "and ",
@@ -95,7 +95,7 @@ export default {
         cardSubtitle: "Minimum 3 months",
         cardContent: {
           firstDescription: "Internship position as a ",
-          postDescription: "Front-End Developer",
+          postDescription: "Full-Stack TypeScript Developer",
           secondDescription: "Schedule : ",
           schedule: "Full-time",
           lastDescription: "Open to ",
@@ -138,12 +138,12 @@ export default {
       failSendingToast: {
         title: "An error occurred",
         description:
-          "There is an error sending your message. Please try again later",
+            "There is an error sending your message. Please try again later",
       },
       catchErrorToast: {
         title: "An error occurred",
         description:
-          "There was a problem sending your message. Please try again later. If the issue persists, feel free to contact me directly.",
+            "There was a problem sending your message. Please try again later. If the issue persists, feel free to contact me directly.",
       },
       sendButton: {
         title: "Send Message",
@@ -167,7 +167,7 @@ export default {
   footer: {
     inspiration: "Inspired by Radiant-Wizard , thanks to him 🙏",
     description:
-      "© 2026 Miharisoa. Built with React, Next.js, ShadCN UI and Tailwind CSS.",
+        "© 2026 Miharisoa. Built with React, Next.js, ShadCN UI and Tailwind CSS.",
   },
 
   notFound: {

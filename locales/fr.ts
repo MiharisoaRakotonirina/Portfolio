@@ -6,29 +6,29 @@ export default {
     projects: "Projets",
     experience: "Expérience",
     contact: {
-      subLink: "N’hésitez pas à me contacter",
+      subLink: "N'hésitez pas à me contacter",
     },
   },
 
   heroSection: {
-    greeting: "Bonjour, Je suis ",
+    greeting: "Hello, Je suis ",
     description:
-      "Étudiant en informatique passionné par le développement front-end. En troisième année, j'explore de nouvelles idées et repousse les limites créatives pour offrir des expériences uniques.",
+        "Étudiant en informatique en troisième année, j'apprends le développement Full-Stack projet après projet. Curieux de nature, j'aime aller voir comment les choses fonctionnent avant de construire des outils utiles.",
     heroContactCTA: "Entrons en contact",
     heroLearnCTA: "En Savoir Plus",
-    postTitle: "Développeur Front-End",
+    postTitle: "Développeur Full-Stack TypeScript",
   },
 
   about: {
     title: "À propos de moi",
     description:
-      "Apprenez à me connaître : mon parcours, mes passions et ce qui m’inspire dans la tech.",
+        "Apprenez à me connaître : mon parcours, mes passions et ce qui m'inspire dans la tech.",
     backgroundCard: {
       title: "Mon Parcours",
       firstParagraph:
-        "Étudiant en informatique à HEI, passionné par la création de solutions innovantes grâce au code. Mon parcours a commencé par une curiosité pour la technologie et est devenu une passion pour le développement.",
+          "Étudiant en informatique à HEI, passionné par la création de solutions innovantes grâce au code. Mon parcours a commencé par une curiosité pour la technologie et est devenu une passion pour le développement.",
       secondParagraph:
-        "Je suis passionné par le développement de sites web où les utilisateurs se sentent à l'aise, créant des interfaces intuitives et faciles à naviguer, en alliant ergonomie et design.",
+          "Je suis passionné par le développement de sites web où les utilisateurs se sentent à l'aise, créant des interfaces intuitives et faciles à naviguer, en alliant ergonomie et design.",
     },
     activitiesAndInterestsCard: {
       title: "Activités & Centres d'intérêt",
@@ -41,7 +41,7 @@ export default {
   skills: {
     title: "Compétences Techniques & Frameworks",
     description:
-      "Un résumé détaillé de mes compétences techniques et des outils avec lesquels je travaille.",
+        "Un résumé détaillé de mes compétences techniques et des outils avec lesquels je travaille.",
     cards: {
       programmingLanguagesTitle: "Langages de programmation",
       frameworkAndLibrariesTitle: "Frameworks & Bibliothèque",
@@ -52,14 +52,14 @@ export default {
   projects: {
     title: "Projets réalisés",
     description:
-      "Une présentation de mes réalisations récentes, mettant en avant mes compétences en développement front-end et technologies web.",
+        "Une présentation de mes réalisations récentes, mettant en avant mes compétences en développement Full-Stack et technologies web.",
     firstProject: {
       description:
-        "Site vitrine présentant des destinations touristiques à Madagascar et ailleurs, conçu avec HTML et CSS.",
+          "Site vitrine présentant des destinations touristiques à Madagascar et ailleurs, conçu avec HTML et CSS.",
     },
     secondProject: {
       description:
-        "Application de billetterie événementielle développée en équipe, pour la gestion et la vente de billets en ligne.",
+          "Application de billetterie événementielle développée en équipe, pour la gestion et la vente de billets en ligne.",
       isFeatured: "Contributeur",
     },
   },
@@ -67,12 +67,12 @@ export default {
   experience: {
     title: "Parcours académique et professionnel",
     description:
-      "Un aperçu de mon parcours académique et de mon expérience professionnelle dans le domaine de la tech.",
+        "Un aperçu de mon parcours académique et de mon expérience professionnelle dans le domaine de la tech.",
     academicPath: {
       title: "Parcours académique",
       cardTitle: "Licence en informatique",
       courseSubject:
-        "Programmation orientée objet, Algorithmes et structures de données, Systèmes de gestion de bases de données, Développement web et mobile, Informatique en nuage, Ingénierie logicielle, Analyse de données.",
+          "Programmation orientée objet, Algorithmes et structures de données, Systèmes de gestion de bases de données, Développement web et mobile, Informatique en nuage, Ingénierie logicielle, Analyse de données.",
     },
     professionalPath: {
       title: "Parcours professionnel",
@@ -81,9 +81,9 @@ export default {
       cardDescription: "Dans les plus brefs délais",
       cardContent: {
         firstDescription: "Poste en alternance en tant que ",
-        postDescription: "Développeur Front-End",
+        postDescription: "Développeur Full-Stack TypeScript",
         secondDescription: "Temps de travail : ",
-        schedule: "22 heures par semaine",
+        schedule: "Temps plein",
         lastDescription: "Disponible pour du ",
         firstCondition: "télétravail ",
         keyword: "et ",
@@ -94,7 +94,7 @@ export default {
         cardSubtitle: "Minimum 3 mois",
         cardContent: {
           firstDescription: "Poste en stage en tant que ",
-          postDescription: "Développeur Front-End",
+          postDescription: "Développeur Full-Stack TypeScript",
           secondDescription: "Temps de travail : ",
           schedule: "Temps plein",
           lastDescription: "Disponible pour du ",
@@ -109,11 +109,11 @@ export default {
   contact: {
     title: "Restons en contact",
     description:
-      "Toujours partant pour discuter d'opportunités et de projets technologiques.",
+        "Toujours partant pour discuter d'opportunités et de projets technologiques.",
     contactForm: {
       title: "Envoyez-moi un message",
       description:
-        "Complétez le formulaire ci-dessous, je vous répondrai dans les plus brefs délais.",
+          "Complétez le formulaire ci-dessous, je vous répondrai dans les plus brefs délais.",
       fields: {
         placeholder: {
           email: "votre.email@exemple.com",
@@ -139,12 +139,12 @@ export default {
       failSendingToast: {
         title: "Une erreur est survenue",
         description:
-          "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer plus tard.",
+            "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer plus tard.",
       },
       catchErrorToast: {
         title: "Une erreur est survenue",
         description:
-          "Il y a eu un problème lors de l'envoi de votre message. Veuillez réessayer plus tard. Si l'erreur persiste, contactez-moi directement.",
+            "Il y a eu un problème lors de l'envoi de votre message. Veuillez réessayer plus tard. Si l'erreur persiste, contactez-moi directement.",
       },
       sendButton: {
         title: "Envoyer",
@@ -158,7 +158,7 @@ export default {
     socialNetworks: {
       title: "Suivez-moi",
       description:
-        "Retrouvez-moi sur les réseaux sociaux et découvrez mes réalisations récentes",
+          "Retrouvez-moi sur les réseaux sociaux et découvrez mes réalisations récentes",
     },
     resume: {
       title: "Vous souhaitez voir mon CV ?",
@@ -169,7 +169,7 @@ export default {
   footer: {
     inspiration: "Inspiré par Radiant-Wizard, merci à lui 🙏",
     description:
-      "© 2026 Miharisoa. Conçu avec React, Next.js, ShadCN UI et Tailwind CSS.",
+        "© 2026 Miharisoa. Conçu avec React, Next.js, ShadCN UI et Tailwind CSS.",
   },
 
   notFound: {
