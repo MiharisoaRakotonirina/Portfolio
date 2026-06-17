@@ -6,7 +6,6 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/custom/theme-provider";
 import Providers from "./providers";
 import { notFound } from "next/navigation";
-import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -20,16 +19,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Miharisoa Rakotonirina - Front-End Developer (React/TypeScript)",
+  title: "Miharisoa Rakotonirina - Full-Stack Developer (React/NestJS/TypeScript)",
   description:
-    "Miharisoa's portfolio. Student and passionate front-end developer specializing in React, TypeScript, and building modern, responsive web applications.",
+      "Miharisoa's portfolio. Student and passionate Full-Stack developer specializing in React, NestJS, TypeScript, and building modern, responsive web applications.",
   openGraph: {
-    title: "Miharisoa Rakotonirina | Front-End Developer Portfolio",
+    title: "Miharisoa Rakotonirina | Full-Stack Developer Portfolio",
     description:
-      "Check out Miharisoa's portfolio, a student and front-end developer, showcasing projects built with React, Next.js, and Tailwind CSS. Building modern, responsive websites with a focus on clean design.",
+        "Check out Miharisoa's portfolio, a student and Full-Stack developer, showcasing projects built with React, Next.js, NestJS, and Tailwind CSS. Building modern, responsive websites with a focus on clean design.",
   },
   keywords:
-    "Miharisoa Rakotonirina, front-end developer, portfolio, React, Next.js, Tailwind CSS, web development, responsive design,CSS, student portfolio",
+      "Miharisoa Rakotonirina, full-stack developer, portfolio, React, Next.js, NestJS, TypeScript, Tailwind CSS, web development, responsive design, CSS, student portfolio",
   icons: {
     icon: "/web-app-manifest-512x512.png",
   },
